@@ -1,6 +1,6 @@
 # ⚔️ Portfólio de Engenharia de Software — Bruno Henrique
 
-> Portfólio técnico pessoal com arquitetura Jamstack em Astro 5, TypeScript e Tailwind CSS, ambientado na estética clássica dos JRPGs da era de ouro (Final Fantasy Legacy).
+> Portfólio técnico pessoal com arquitetura Jamstack em Astro 5, TypeScript e Tailwind CSS
 
 [![Astro](https://img.shields.io/badge/Astro-5.0-bc52ee?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178c6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -87,4 +87,3 @@ npm run preview
 * **E-mail:** [brunohf131@gmail.com](mailto:brunohf131@gmail.com)
 * **LinkedIn:** [linkedin.com/in/brunohfmelo](https://linkedin.com/in/brunohfmelo)
 * **GitHub:** [@I-Am-BrunoHFMelo](https://github.com/I-Am-BrunoHFMelo)
-* **Artigo Publicado:** [Portal SOL - SBC](https://sol.sbc.org.br/index.php/brasnam/article/view/43247)
