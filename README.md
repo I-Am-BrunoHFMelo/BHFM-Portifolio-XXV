@@ -12,7 +12,7 @@
 
 ## 🌐 Demonstração ao Vivo
 O projeto foi desenvolvido para deploy contínuo na Vercel:
-👉 **[Acessar Portfólio Online](https://brunohfmelo.vercel.app)** *(substitua pela sua URL final da Vercel)*
+👉 **[Acessar Portfólio Online]([https://brunohfmelo.vercel.app](https://bhfm-portifolio-xxv.vercel.app))**
 
 ---
 
