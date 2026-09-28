@@ -1,0 +1,273 @@
+---
+import { portfolioContent } from '../data/portfolioData';
+const pt = portfolioContent.pt;
+const en = portfolioContent.en;
+---
+
+<section id="quest-log" class="py-16 sm:py-24 px-4 max-w-6xl mx-auto">
+  
+  <!-- Section Title Bar -->
+  <div class="mb-10 sm:mb-12 flex flex-col items-center sm:items-start space-y-2">
+    <div class="text-xs font-mono tracking-widest text-amano-cyan dark:text-crystal-blue uppercase">
+      [ 02 // CASE STUDIES & PROJECTS ]
+    </div>
+    <h2 class="font-ff text-2xl sm:text-4xl tracking-widest font-bold uppercase text-slate-900 dark:text-white ff-title-bar inline-block">
+      <span data-pt="PROJETOS & ESTUDOS DE CASO" data-en="PROJECTS & CASE STUDIES">
+        PROJETOS & ESTUDOS DE CASO
+      </span>
+    </h2>
+    <p class="text-sm font-mono text-slate-500 dark:text-slate-400 pt-1 max-w-3xl text-center sm:text-left"
+       data-pt="Problemas reais de arquitetura, concorrência, regras de negócio e resiliência de software desenvolvidos em produção e pesquisa."
+       data-en="Real-world engineering challenges: concurrency, complex domain modeling, security, and resilience built across production and research.">
+      Problemas reais de arquitetura, concorrência, regras de negócio e resiliência de software desenvolvidos em produção e pesquisa.
+    </p>
+  </div>
+
+  <!-- Featured Case Studies (Detailed Technical Deep Dives) -->
+  <div class="space-y-8 mb-16">
+    <div class="flex items-center gap-2 pb-2 border-b border-slate-200 dark:border-crystal-800">
+      <span class="text-amber-500 font-bold">★</span>
+      <h3 class="font-ff text-sm sm:text-base font-bold tracking-widest uppercase text-slate-700 dark:text-slate-300">
+        <span data-pt="SISTEMAS PRINCIPAIS & PESQUISA APLICADA" data-en="CORE SYSTEMS & APPLIED RESEARCH">
+          SISTEMAS PRINCIPAIS & PESQUISA APLICADA
+        </span>
+      </h3>
+    </div>
+
+    {pt.mainQuests.map((quest, idx) => (
+      <article class="ff-box p-6 sm:p-8 space-y-6 group">
+        
+        <!-- Header: Case Title, Org & Role -->
+        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 border-b border-slate-200 dark:border-crystal-800/80 pb-5">
+          <div class="space-y-1">
+            <div class="flex flex-wrap items-center gap-2 text-xs font-mono">
+              <span class="px-2.5 py-0.5 rounded bg-sky-500/10 border border-sky-500/30 text-sky-700 dark:text-crystal-blue font-bold uppercase">
+                ESTUDO DE CASO 0{idx + 1}
+              </span>
+              <span class="text-slate-500 dark:text-slate-400 font-medium">
+                {quest.period}
+              </span>
+              <span class="text-slate-300 dark:text-slate-600">•</span>
+              <span class="text-amano-cyan dark:text-crystal-blue font-semibold">
+                {quest.organization}
+              </span>
+            </div>
+
+            <h4 class="font-ff text-xl sm:text-2xl font-bold text-slate-900 dark:text-white pt-1"
+                data-pt={quest.title}
+                data-en={en.mainQuests[idx].title}>
+              {quest.title}
+            </h4>
+
+            <div class="text-xs font-mono text-slate-600 dark:text-slate-300 font-semibold"
+                 data-pt={`Atuação: ${quest.role}`}
+                 data-en={`Role: ${en.mainQuests[idx].role}`}>
+              Atuação: {quest.role}
+            </div>
+
+            {quest.role.includes('Scrum Master') && (
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-amber-500/10 border border-amber-500/40 text-amber-700 dark:text-amber-400 text-[10px] font-mono font-bold uppercase tracking-wide">
+                <span>⚑</span>
+                <span data-pt="Scrum Master — Liderança técnica de equipe" data-en="Scrum Master — Technical Team Leadership">Scrum Master — Liderança técnica de equipe</span>
+              </div>
+            )}
+          </div>
+
+          <!-- Direct Links / Badges -->
+          <div class="flex flex-wrap items-center gap-2">
+            {quest.paperUrl && (
+              <a 
+                href={quest.paperUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-bold rounded bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-700/60 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-100 transition-colors"
+              >
+                <span>📄</span>
+                <span data-pt="Artigo SBC (BrasNAM)" data-en="SBC Paper (BrasNAM)">Artigo SBC (BrasNAM)</span>
+              </a>
+            )}
+            {quest.liveUrl && (
+              <a 
+                href={quest.liveUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-bold rounded bg-sky-50 dark:bg-crystal-900 border border-sky-300 dark:border-sky-700/60 text-sky-700 dark:text-sky-300 hover:bg-sky-100 transition-colors"
+              >
+                <span>⚡</span>
+                <span data-pt="Demo Online (Vercel)" data-en="Live Demo (Vercel)">Demo Online (Vercel)</span>
+              </a>
+            )}
+            {quest.repoUrl && (
+              <a 
+                href={quest.repoUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-bold rounded bg-slate-100 dark:bg-crystal-900 border border-slate-300 dark:border-crystal-800 text-slate-800 dark:text-slate-200 hover:border-amano-cyan dark:hover:border-crystal-blue transition-colors"
+              >
+                <span>🐙</span>
+                <span>GitHub</span>
+              </a>
+            )}
+          </div>
+        </div>
+
+        <!-- Problem / Solution Summary -->
+        <p class="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed font-sans"
+           data-pt={quest.summary}
+           data-en={en.mainQuests[idx].summary}>
+          {quest.summary}
+        </p>
+
+        <!-- Technical Breakdown Bullet points -->
+        <div class="space-y-2">
+          <div class="text-xs font-mono font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+            <span data-pt="Destaques de Engenharia & Arquitetura:" data-en="Engineering & Architecture Highlights:">
+              Destaques de Engenharia & Arquitetura:
+            </span>
+          </div>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+            {quest.description.map((item, i) => (
+              <li class="flex items-start gap-2.5">
+                <span class="text-amano-cyan dark:text-crystal-blue mt-0.5">✦</span>
+                <span data-pt={item} data-en={en.mainQuests[idx].description[i]}>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Metrics & Impact Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+          {quest.metrics.map((metric, mIdx) => (
+            <div class="p-3 rounded bg-slate-50 dark:bg-crystal-900/50 border border-slate-200 dark:border-crystal-800/80 text-xs font-mono text-center">
+              <span class="text-slate-800 dark:text-slate-200 font-semibold"
+                    data-pt={metric}
+                    data-en={en.mainQuests[idx].metrics[mIdx]}>
+                {metric}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <!-- Tech Stack Tags -->
+        <div class="pt-4 border-t border-slate-200 dark:border-crystal-800/80 flex flex-wrap items-center gap-1.5">
+          <span class="text-xs font-mono text-slate-400 mr-2">Stack:</span>
+          {quest.stack.map((tech) => (
+            <span class="px-2.5 py-1 text-[11px] font-mono rounded bg-slate-100 dark:bg-crystal-900 border border-slate-200 dark:border-crystal-800 text-slate-700 dark:text-slate-300">
+              {tech}
+            </span>
+          ))}
+        </div>
+
+      </article>
+    ))}
+  </div>
+
+  <!-- Secondary Projects & Applied Experiments -->
+  <div class="space-y-6">
+    <div class="flex items-center gap-2 pb-2 border-b border-slate-200 dark:border-crystal-800">
+      <span class="text-sky-500 font-bold">◇</span>
+      <h3 class="font-ff text-sm sm:text-base font-bold tracking-widest uppercase text-slate-700 dark:text-slate-300">
+        <span data-pt="PROJETOS OPEN SOURCE & MODELAGEM APLICADA" data-en="OPEN SOURCE & APPLIED MODELING">
+          PROJETOS OPEN SOURCE & MODELAGEM APLICADA
+        </span>
+      </h3>
+    </div>
+
+    <div class="space-y-4">
+      {pt.sideQuests.map((quest, idx) => (
+        <div class="ff-box p-5 sm:p-6 flex flex-col lg:flex-row lg:items-center justify-between gap-6 transition-all hover:translate-x-1">
+          
+          <!-- Left / Main Content -->
+          <div class="space-y-3 flex-grow">
+            <!-- Metadata Row -->
+            <div class="flex flex-wrap items-center gap-2 text-[11px] font-mono">
+              <span class="px-2 py-0.5 rounded bg-sky-500/10 border border-sky-500/30 text-sky-700 dark:text-crystal-blue font-bold uppercase">
+                PROJETO 0{idx + 1}
+              </span>
+              <span class="text-slate-400">•</span>
+              <span class="text-slate-500 dark:text-slate-400">{quest.period}</span>
+              <span class="text-slate-400">•</span>
+              <span class="text-slate-600 dark:text-slate-300 font-semibold">{quest.organization}</span>
+            </div>
+
+            <!-- Title & Summary -->
+            <div>
+              <h4 class="font-ff text-lg sm:text-xl font-bold text-slate-900 dark:text-white"
+                  data-pt={quest.title}
+                  data-en={en.sideQuests[idx].title}>
+                {quest.title}
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-sans mt-1"
+                 data-pt={quest.summary}
+                 data-en={en.sideQuests[idx].summary}>
+                {quest.summary}
+              </p>
+            </div>
+
+            <!-- Description Bullets -->
+            <ul class="space-y-1 text-xs text-slate-500 dark:text-slate-400 font-sans">
+              {quest.description.map((desc, dIdx) => (
+                <li class="flex items-start gap-1.5">
+                  <span class="text-amano-cyan dark:text-crystal-blue">›</span>
+                  <span data-pt={desc} data-en={en.sideQuests[idx].description[dIdx]}>{desc}</span>
+                </li>
+              ))}
+            </ul>
+
+            <!-- Tech Tags -->
+            <div class="flex flex-wrap items-center gap-1.5 pt-1">
+              <span class="text-[10px] font-mono text-slate-400 uppercase tracking-wider mr-1">Stack:</span>
+              {quest.stack.map((tech) => (
+                <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-100 dark:bg-crystal-900 border border-slate-200 dark:border-crystal-800 text-slate-700 dark:text-slate-300">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <!-- Right / Actions & Key Metric -->
+          <div class="lg:w-64 flex-shrink-0 flex flex-col justify-between gap-3 lg:border-l lg:border-slate-200 lg:dark:border-crystal-800 lg:pl-6 pt-3 lg:pt-0 border-t border-slate-200 dark:border-crystal-800 lg:border-t-0">
+            <!-- Metrics Chips -->
+            <div class="space-y-1.5">
+              {quest.metrics.slice(0, 2).map((m) => (
+                <div class="px-2.5 py-1 rounded bg-slate-50 dark:bg-crystal-900/60 border border-slate-200/80 dark:border-crystal-800/80 text-[11px] font-mono text-slate-700 dark:text-slate-300 text-center font-medium">
+                  {m}
+                </div>
+              ))}
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col gap-2 pt-1">
+              {quest.liveUrl && (
+                <a 
+                  href={quest.liveUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-mono font-bold rounded bg-sky-600 hover:bg-sky-500 text-white transition-colors shadow-sm text-center"
+                >
+                  <span>⚡</span>
+                  <span data-pt="Demo Online (Vercel)" data-en="Live Demo (Vercel)">Demo Online (Vercel)</span>
+                </a>
+              )}
+              {quest.repoUrl && (
+                <a 
+                  href={quest.repoUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-mono font-bold rounded bg-slate-100 dark:bg-crystal-900 border border-slate-200 dark:border-crystal-800 hover:border-amano-cyan dark:hover:border-crystal-blue text-slate-800 dark:text-slate-200 transition-colors text-center"
+                >
+                  <span>🐙</span>
+                  <span>GitHub</span>
+                  <span>→</span>
+                </a>
+              )}
+            </div>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+
+</section>

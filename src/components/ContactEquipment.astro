@@ -1,0 +1,175 @@
+---
+import { portfolioContent } from '../data/portfolioData';
+const pt = portfolioContent.pt;
+const en = portfolioContent.en;
+---
+
+<section id="equipment" class="py-16 sm:py-24 px-4 max-w-5xl mx-auto">
+  
+  <!-- Section Title Bar -->
+  <div class="mb-10 sm:mb-12 flex flex-col items-center text-center space-y-2">
+    <div class="text-xs font-mono tracking-widest text-amano-cyan dark:text-crystal-blue uppercase">
+      [ 04 // CONTACT & RESUME ]
+    </div>
+    <h2 class="font-ff text-2xl sm:text-4xl tracking-widest font-bold uppercase text-slate-900 dark:text-white ff-title-bar inline-block">
+      <span data-pt="CONTATO & CURRÍCULO PROFISSIONAL" data-en="CONTACT & TECHNICAL RESUME">
+        CONTATO & CURRÍCULO PROFISSIONAL
+      </span>
+    </h2>
+    <p class="text-sm font-mono text-slate-500 dark:text-slate-400 pt-1 max-w-xl mx-auto"
+       data-pt="Canais diretos para novas oportunidades técnicas, contratação e download do currículo."
+       data-en="Direct channels for engineering opportunities, hiring inquiries, and official resume download.">
+      Canais diretos para novas oportunidades técnicas, contratação e download do currículo.
+    </p>
+  </div>
+
+  <div class="ff-box p-6 sm:p-10 relative overflow-hidden">
+    
+    <!-- Subtle Background Glow -->
+    <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-amano-cyan/10 dark:bg-crystal-blue/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+      
+      <!-- Left: Direct Action / Download CV & Bio -->
+      <div class="space-y-6">
+        <div class="space-y-2">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-semibold">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+            <span data-pt="DISPONÍVEL PARA CONTRATAÇÃO (REMOTO CLT / PJ)" data-en="AVAILABLE FOR IMMEDIATE HIRE (REMOTE FULL-TIME / CONTRACT)">
+              DISPONÍVEL PARA CONTRATAÇÃO (REMOTO CLT / PJ)
+            </span>
+          </div>
+
+          <h3 class="font-ff text-xl sm:text-2xl font-bold text-slate-900 dark:text-white"
+              data-pt="Vamos conversar sobre novos desafios?"
+              data-en="Let's build reliable software together">
+            Vamos conversar sobre novos desafios?
+          </h3>
+
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-sans"
+             data-pt="Buscando uma oportunidade para agregar solidez técnica em backend (Spring Boot, Django, RBAC), processamento concorrente e desenvolvimento fullstack com Angular."
+             data-en="Looking for opportunities to deliver backend stability (Spring Boot, Django, RBAC), concurrent data processing, and fullstack capabilities with Angular.">
+            Buscando uma oportunidade para agregar solidez técnica em backend (Spring Boot, Django, RBAC), processamento concorrente e desenvolvimento fullstack com Angular.
+          </p>
+        </div>
+
+        <!-- Download CV Button -->
+        <div class="pt-2">
+          <a 
+            href="/curriculo-bruno-melo.pdf" 
+            download="Curriculo_Bruno_Henrique_Melo.pdf"
+            class="ff-interactive group flex items-center justify-between p-4 rounded-lg bg-slate-900 dark:bg-crystal-900 text-white border-2 border-slate-700 dark:border-crystal-800 hover:border-amano-cyan dark:hover:border-crystal-blue transition-all shadow-md cursor-pointer"
+          >
+            <div class="flex items-center gap-3">
+              <span class="text-2xl group-hover:scale-110 transition-transform">📄</span>
+              <div>
+                <div class="font-ff text-xs sm:text-sm font-bold tracking-wider" data-pt="BAIXAR CURRÍCULO COMPLETO (PDF)" data-en="DOWNLOAD FULL RESUME (PDF)">
+                  BAIXAR CURRÍCULO COMPLETO (PDF)
+                </div>
+                <div class="text-[11px] font-mono text-slate-400" data-pt="Versão oficial atualizada e homologada para ATS" data-en="Official updated ATS-ready version">
+                  Versão oficial atualizada e homologada para ATS
+                </div>
+              </div>
+            </div>
+            <span class="font-mono text-amano-cyan dark:text-crystal-blue text-lg group-hover:translate-x-1 transition-transform">↓</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Channel Links (Email, GitHub, LinkedIn) -->
+      <div class="space-y-4">
+        
+        <!-- Copy Email Card -->
+        <div class="p-4 rounded-lg bg-slate-50 dark:bg-crystal-900/60 border border-slate-200 dark:border-crystal-800/80 flex items-center justify-between gap-3">
+          <div class="space-y-0.5 overflow-hidden">
+            <span class="text-[10px] font-mono uppercase text-slate-400">E-mail de Contato</span>
+            <div class="font-mono text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 truncate">
+              {pt.personal.email}
+            </div>
+          </div>
+          <button 
+            id="copy-email-btn"
+            class="px-3 py-1.5 text-xs font-mono font-bold rounded bg-slate-200 dark:bg-crystal-800 hover:bg-amano-cyan hover:text-white dark:hover:bg-crystal-blue dark:hover:text-slate-950 transition-colors flex-shrink-0 cursor-pointer"
+            data-email={pt.personal.email}
+          >
+            <span id="copy-text" data-pt="Copiar" data-en="Copy">Copiar</span>
+          </button>
+        </div>
+
+        <!-- LinkedIn Card -->
+        <a 
+          href={pt.personal.linkedin} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="p-4 rounded-lg bg-slate-50 dark:bg-crystal-900/60 border border-slate-200 dark:border-crystal-800/80 hover:border-amano-cyan dark:hover:border-crystal-blue flex items-center justify-between transition-colors group cursor-pointer"
+        >
+          <div class="flex items-center gap-3">
+            <span class="text-xl">💼</span>
+            <div>
+              <span class="text-[10px] font-mono uppercase text-slate-400">LinkedIn</span>
+              <div class="font-mono text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-amano-cyan dark:group-hover:text-crystal-blue transition-colors">
+                linkedin.com/in/brunohfmelo
+              </div>
+            </div>
+          </div>
+          <span class="text-xs font-mono text-slate-400 group-hover:translate-x-1 transition-transform">↗</span>
+        </a>
+
+        <!-- GitHub Profile Card -->
+        <a 
+          href={pt.personal.github} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="p-4 rounded-lg bg-slate-50 dark:bg-crystal-900/60 border border-slate-200 dark:border-crystal-800/80 hover:border-amano-cyan dark:hover:border-crystal-blue flex items-center justify-between transition-colors group cursor-pointer"
+        >
+          <div class="flex items-center gap-3">
+            <span class="text-xl">🐙</span>
+            <div>
+              <span class="text-[10px] font-mono uppercase text-slate-400">GitHub</span>
+              <div class="font-mono text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-amano-cyan dark:group-hover:text-crystal-blue transition-colors">
+                github.com/I-Am-BrunoHFMelo
+              </div>
+            </div>
+          </div>
+          <span class="text-xs font-mono text-slate-400 group-hover:translate-x-1 transition-transform">↗</span>
+        </a>
+
+        <!-- Location & Availability info -->
+        <div class="px-4 py-2 text-xs font-mono text-slate-500 dark:text-slate-400 flex items-center gap-2">
+          <span>📍</span>
+          <span data-pt={pt.personal.location} data-en={en.personal.location}>{pt.personal.location}</span>
+        </div>
+
+        <!-- Phone -->
+        <div class="px-4 py-2 text-xs font-mono text-slate-500 dark:text-slate-400 flex items-center gap-2">
+          <span>📞</span>
+          <a href={`tel:${pt.personal.phone}`} class="hover:text-amano-cyan dark:hover:text-crystal-blue transition-colors">
+            {pt.personal.phone}
+          </a>
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+  const copyBtn = document.getElementById('copy-email-btn');
+  const copyText = document.getElementById('copy-text');
+
+  copyBtn?.addEventListener('click', () => {
+    const email = copyBtn.getAttribute('data-email');
+    if (email && copyText) {
+      navigator.clipboard.writeText(email).then(() => {
+        copyText.textContent = 'Copiado! ✓';
+        setTimeout(() => {
+          copyText.textContent = 'Copiar';
+        }, 2500);
+      });
+    }
+  });
+</script>

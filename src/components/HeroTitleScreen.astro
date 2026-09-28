@@ -1,0 +1,171 @@
+---
+import { portfolioContent } from '../data/portfolioData';
+const pt = portfolioContent.pt;
+const en = portfolioContent.en;
+---
+
+<section id="title-screen" class="relative min-h-[92vh] sm:min-h-screen flex flex-col justify-between items-center pt-24 pb-10 px-4 select-none overflow-hidden">
+  
+  <!-- Amano-inspired Watercolor Crystal Emblem (Artistic Vector Layer) -->
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none -z-10 overflow-hidden">
+    <div class="relative w-[340px] h-[340px] sm:w-[560px] sm:h-[560px] md:w-[720px] md:h-[720px] opacity-75 dark:opacity-35 transition-all duration-700 animate-float-slow">
+      <!-- Watercolor Fluid Gradients -->
+      <svg viewBox="0 0 400 400" class="w-full h-full filter blur-[1px]">
+        <defs>
+          <radialGradient id="amanoGrad1" cx="45%" cy="40%" r="60%">
+            <stop offset="0%" stop-color="#c084fc" stop-opacity="0.8" />
+            <stop offset="45%" stop-color="#f472b6" stop-opacity="0.5" />
+            <stop offset="75%" stop-color="#ec4899" stop-opacity="0.3" />
+            <stop offset="100%" stop-color="#a855f7" stop-opacity="0" />
+          </radialGradient>
+          <radialGradient id="amanoGrad2" cx="60%" cy="55%" r="50%">
+            <stop offset="0%" stop-color="#ec4899" stop-opacity="0.7" />
+            <stop offset="50%" stop-color="#a855f7" stop-opacity="0.4" />
+            <stop offset="100%" stop-color="#7e22ce" stop-opacity="0" />
+          </radialGradient>
+          <filter id="water-filter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="25" />
+          </filter>
+        </defs>
+        <!-- Organic flowing watercolor shapes -->
+        <path 
+          filter="url(#water-filter)" 
+          d="M 190,60 C 270,40 330,110 320,190 C 310,270 240,330 170,320 C 90,310 70,230 90,160 C 110,80 130,70 190,60 Z" 
+          fill="url(#amanoGrad1)" 
+        />
+        <path 
+          filter="url(#water-filter)" 
+          d="M 210,90 C 290,100 340,160 310,230 C 280,300 210,340 140,300 C 80,260 80,180 120,130 C 160,80 170,80 210,90 Z" 
+          fill="url(#amanoGrad2)" 
+          style="mix-blend-mode: multiply;" 
+        />
+      </svg>
+      <!-- Subtle crystalline linework accents -->
+      <div class="absolute inset-0 flex items-center justify-center">
+        <svg viewBox="0 0 200 200" class="w-2/3 h-2/3 opacity-30 stroke-amano-cyan dark:stroke-crystal-blue stroke-[0.75] fill-none">
+          <circle cx="100" cy="100" r="70" stroke-dasharray="4 6" />
+          <polygon points="100,20 180,160 20,160" />
+          <polygon points="100,180 180,40 20,40" />
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Badge Info -->
+  <div class="w-full max-w-4xl text-center space-y-2 mt-2 sm:mt-6">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amano-300/80 dark:border-crystal-800 bg-white/70 dark:bg-crystal-900/70 text-xs font-mono tracking-widest text-slate-700 dark:text-slate-300">
+      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+      <span data-pt="ENGENHARIA DE SOFTWARE • SISTEMAS DISTRIBUÍDOS & BACKEND" data-en="SOFTWARE ENGINEERING • DISTRIBUTED SYSTEMS & BACKEND">
+        ENGENHARIA DE SOFTWARE • SISTEMAS DISTRIBUÍDOS & BACKEND
+      </span>
+    </div>
+  </div>
+
+  <!-- Central Title Layout with Official Highwind Italic Font (100% Vector Crisp) -->
+  <div class="my-auto text-center max-w-4xl px-4 py-6 relative z-10 flex flex-col items-center">
+    
+    <!-- True Vector Highwind Typography Title (Upright / Regular) -->
+    <h1 class="font-highwind not-italic text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-[0.08em] font-normal text-slate-900 dark:text-white uppercase transition-all duration-300 drop-shadow-sm select-none">
+      BRUNO H. F. MELO
+    </h1>
+    
+    <!-- Iconic Final Fantasy Double Underline Bar -->
+    <div class="w-full max-w-xl mx-auto my-3 sm:my-4 flex flex-col items-center gap-0.5">
+      <div class="w-full h-[2.5px] bg-gradient-to-r from-transparent via-slate-800 dark:via-slate-200 to-transparent"></div>
+      <div class="w-3/4 h-[1px] bg-gradient-to-r from-transparent via-amano-cyan dark:via-crystal-blue to-transparent"></div>
+    </div>
+
+    <!-- Lore / Vision Quote -->
+    <p class="font-serif italic text-base sm:text-lg md:text-xl text-slate-700 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed mt-2" 
+       data-pt={`"${pt.personal.prologue}"`} 
+       data-en={`"${en.personal.prologue}"`}>
+      "{pt.personal.prologue}"
+    </p>
+
+    <div class="mt-3 text-xs sm:text-sm font-mono tracking-wider text-slate-500 dark:text-slate-400 uppercase"
+         data-pt={pt.personal.tagline}
+         data-en={en.personal.tagline}>
+      {pt.personal.tagline}
+    </div>
+  </div>
+
+  <!-- Interactive Title Menu with White Gloved Hand Cursor -->
+  <div class="w-full max-w-md mx-auto my-4 sm:my-6 z-20">
+    <div class="relative bg-white/80 dark:bg-crystal-900/85 backdrop-blur-md rounded-lg p-5 sm:p-6 border-2 border-slate-300 dark:border-crystal-800 shadow-ff-window dark:shadow-ff-window-dark">
+      
+      <ul id="ff-menu-list" class="space-y-3 font-ff text-sm sm:text-base tracking-[0.15em] font-semibold text-slate-800 dark:text-slate-200">
+        
+        <!-- Option 1: Projects & Case Studies -->
+        <li class="ff-menu-item relative flex items-center gap-3 cursor-pointer group px-2 py-1 rounded transition-colors" data-target="#quest-log">
+          <span class="ff-cursor-hand w-7 h-5 flex-shrink-0 transition-transform duration-200 opacity-0 group-hover:opacity-100 group-focus:opacity-100">
+            <img src="/ff-glove.png" alt="Cursor" class="w-full h-full object-contain drop-shadow-md animate-cursor-point" style="image-rendering: pixelated;" />
+          </span>
+          <a href="#quest-log" class="flex-grow group-hover:text-amano-cyan dark:group-hover:text-crystal-blue transition-colors" data-pt={pt.navigation.projects} data-en={en.navigation.projects}>
+            {pt.navigation.projects}
+          </a>
+        </li>
+
+        <!-- Option 2: Profile & Education -->
+        <li class="ff-menu-item relative flex items-center gap-3 cursor-pointer group px-2 py-1 rounded transition-colors" data-target="#status-screen">
+          <span class="ff-cursor-hand w-7 h-5 flex-shrink-0 transition-transform duration-200 opacity-0 group-hover:opacity-100 group-focus:opacity-100">
+            <img src="/ff-glove.png" alt="Cursor" class="w-full h-full object-contain drop-shadow-md animate-cursor-point" style="image-rendering: pixelated;" />
+          </span>
+          <a href="#status-screen" class="flex-grow group-hover:text-amano-cyan dark:group-hover:text-crystal-blue transition-colors" data-pt={pt.navigation.profile} data-en={en.navigation.profile}>
+            {pt.navigation.profile}
+          </a>
+        </li>
+
+        <!-- Option 3: Tech Stack & Skills -->
+        <li class="ff-menu-item relative flex items-center gap-3 cursor-pointer group px-2 py-1 rounded transition-colors" data-target="#inventory">
+          <span class="ff-cursor-hand w-7 h-5 flex-shrink-0 transition-transform duration-200 opacity-0 group-hover:opacity-100 group-focus:opacity-100">
+            <img src="/ff-glove.png" alt="Cursor" class="w-full h-full object-contain drop-shadow-md animate-cursor-point" style="image-rendering: pixelated;" />
+          </span>
+          <a href="#inventory" class="flex-grow group-hover:text-amano-cyan dark:group-hover:text-crystal-blue transition-colors" data-pt={pt.navigation.skills} data-en={en.navigation.skills}>
+            {pt.navigation.skills}
+          </a>
+        </li>
+
+        <!-- Option 4: Contact & CV -->
+        <li class="ff-menu-item relative flex items-center gap-3 cursor-pointer group px-2 py-1 rounded transition-colors" data-target="#equipment">
+          <span class="ff-cursor-hand w-7 h-5 flex-shrink-0 transition-transform duration-200 opacity-0 group-hover:opacity-100 group-focus:opacity-100">
+            <img src="/ff-glove.png" alt="Cursor" class="w-full h-full object-contain drop-shadow-md animate-cursor-point" style="image-rendering: pixelated;" />
+          </span>
+          <a href="#equipment" class="flex-grow group-hover:text-amano-cyan dark:group-hover:text-crystal-blue transition-colors" data-pt={pt.navigation.contact} data-en={en.navigation.contact}>
+            {pt.navigation.contact}
+          </a>
+        </li>
+      </ul>
+
+      <div class="mt-4 pt-3 border-t border-slate-200 dark:border-crystal-800/80 text-[11px] font-mono text-center text-slate-400 tracking-widest">
+        [ ▲ ▼ NAVEGAR &nbsp;•&nbsp; ENTER CONFIRMAR ]
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="pb-6 flex flex-col items-center gap-1 animate-bounce" aria-hidden="true">
+    <span class="text-[10px] font-mono tracking-[0.3em] text-slate-400 dark:text-slate-600 uppercase">Scroll</span>
+    <svg class="w-4 h-4 text-amano-cyan dark:text-crystal-blue opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
+
+</section>
+
+<script>
+
+  const menuItems = document.querySelectorAll('.ff-menu-item');
+  if (menuItems.length > 0) {
+    const firstHand = menuItems[0].querySelector('.ff-cursor-hand');
+    firstHand?.classList.remove('opacity-0');
+  }
+
+  menuItems.forEach((item) => {
+    item.addEventListener('mouseenter', () => {
+      menuItems.forEach(i => i.querySelector('.ff-cursor-hand')?.classList.add('opacity-0'));
+      item.querySelector('.ff-cursor-hand')?.classList.remove('opacity-0');
+    });
+  });
+</script>
+

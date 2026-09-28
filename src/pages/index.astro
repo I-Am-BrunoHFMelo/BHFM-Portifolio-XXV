@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeaderNav from '../components/HeaderNav.astro';
+import HeroTitleScreen from '../components/HeroTitleScreen.astro';
+import StatusWindow from '../components/StatusWindow.astro';
+import QuestLog from '../components/QuestLog.astro';
+import Inventory from '../components/Inventory.astro';
+import ContactEquipment from '../components/ContactEquipment.astro';
+import FooterCopyright from '../components/FooterCopyright.astro';
+---
+
+<Layout 
+  title="Bruno Henrique | Software Engineer (Fullstack & Backend)" 
+  description="Portfólio de Engenharia de Software de Bruno Henrique Freitas de Melo. Especialista em Backend, Processamento Concorrente e IA Aplicada com temática clássica de Final Fantasy."
+>
+  <HeaderNav />
+  
+  <main class="relative z-10">
+    <HeroTitleScreen />
+    
+    <!-- Dividing line between Hero and Content -->
+    <div class="max-w-4xl mx-auto px-4 my-6">
+      <div class="h-[1px] bg-gradient-to-r from-transparent via-slate-300 dark:via-crystal-800 to-transparent"></div>
+    </div>
+    
+    <StatusWindow />
+    <QuestLog />
+    <Inventory />
+    <ContactEquipment />
+  </main>
+
+  <FooterCopyright />
+</Layout>

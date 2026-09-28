@@ -1,0 +1,282 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { 
+  title = "Bruno Henrique Freitas de Melo | Software Engineer", 
+  description = "Engenheiro de Software com foco em Backend, Processamento Concorrente e IA Aplicada. Portfólio técnico inspirado na estética clássica de Final Fantasy." 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚔️</text></svg>" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    
+    <!-- Google Fonts: Cinzel (FF Header), Playfair Display (Quotes), Inter (Body), JetBrains Mono (Code/Stats) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <script is:inline>
+      // Load saved theme and language immediately to prevent flashing
+      const theme = localStorage.getItem('ff_theme') || 'light';
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      
+      const lang = localStorage.getItem('ff_lang') || 'pt';
+      document.documentElement.setAttribute('data-lang', lang);
+    </script>
+  </head>
+  <body class="bg-amano-50 dark:bg-crystal-950 text-amano-900 dark:text-slate-100 font-sans transition-colors duration-300 min-h-screen selection:bg-amano-cyan/30 selection:text-amano-900 dark:selection:bg-crystal-blue/30 dark:selection:text-white ff-cursor">
+    <div class="relative overflow-hidden min-h-screen">
+      <!-- Background subtle atmospheric gradients -->
+      <div class="fixed inset-0 pointer-events-none opacity-40 dark:opacity-20 transition-opacity duration-500 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(168,85,247,0.15),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(192,132,252,0.2),rgba(23,15,35,0))]"></div>
+      
+      <slot />
+    </div>
+
+    <!-- Scene Transition Flash Overlay (JRPG scene change) -->
+
+    <!-- Konami Easter Egg Message -->
+    <div id="konami-msg" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[9998] px-6 py-3 rounded-lg bg-slate-900/95 dark:bg-crystal-900/95 border border-amano-cyan dark:border-crystal-blue text-amano-cyan dark:text-crystal-blue font-mono text-xs sm:text-sm tracking-wide text-center opacity-0 transition-all duration-500 pointer-events-none shadow-xl whitespace-nowrap" aria-live="polite">
+      É perigoso ir sozinho! Leve <a id="konami-link" href="https://youtu.be/nNDGsDwUaXo?si=NiYZsO9e3Hi9wDCp" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-emerald-400 transition-colors">isso</a>
+    </div>
+
+
+    <!-- Script for sound and global handlers -->
+    <script>
+      import { initAudio, setSoundEnabled, playCursorSound, playConfirmSound } from '../utils/sound';
+
+      // Audio setup
+      const soundBtn = document.getElementById('sound-toggle');
+      let soundActive = true; // FX ON by default
+
+      // Show FX ON state immediately (AudioContext will init on first user gesture)
+      updateSoundUI();
+
+      // Lazily initialize AudioContext on first user interaction (Web Audio API requirement)
+      document.addEventListener('click', () => {
+        initAudio();
+        setSoundEnabled(true);
+      }, { once: true });
+
+      soundBtn?.addEventListener('click', () => {
+        soundActive = !soundActive;
+        setSoundEnabled(soundActive);
+        updateSoundUI();
+      });
+
+      function updateSoundUI() {
+        const soundLabel = document.getElementById('sound-status');
+        const soundIcon = document.getElementById('sound-icon');
+        if (soundLabel && soundIcon) {
+          if (soundActive) {
+            soundLabel.textContent = 'FX ON';
+            soundIcon.innerHTML = `<path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>`;
+          } else {
+            soundLabel.textContent = 'FX OFF';
+            soundIcon.innerHTML = `<path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>`;
+          }
+        }
+      }
+
+      // Play cursor sound on interactive elements if enabled
+      document.querySelectorAll('.ff-menu-item, .ff-interactive, a, button').forEach((el) => {
+        el.addEventListener('mouseenter', () => {
+          if (soundActive) playCursorSound();
+        });
+        el.addEventListener('click', () => {
+          if (soundActive) playConfirmSound();
+        });
+      });
+
+      // Language Switcher Logic
+      const langToggles = document.querySelectorAll('.lang-toggle-btn');
+      langToggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const targetLang = btn.getAttribute('data-lang');
+          if (targetLang) {
+            localStorage.setItem('ff_lang', targetLang);
+            document.documentElement.setAttribute('data-lang', targetLang);
+            document.querySelectorAll('[data-pt]').forEach((el) => {
+              const ptText = el.getAttribute('data-pt');
+              const enText = el.getAttribute('data-en');
+              if (targetLang === 'en' && enText) {
+                el.innerHTML = enText;
+              } else if (targetLang === 'pt' && ptText) {
+                el.innerHTML = ptText;
+              }
+            });
+            // Update active state on buttons
+            langToggles.forEach(b => {
+              if (b.getAttribute('data-lang') === targetLang) {
+                b.classList.add('bg-amano-200', 'dark:bg-crystal-800', 'font-bold');
+              } else {
+                b.classList.remove('bg-amano-200', 'dark:bg-crystal-800', 'font-bold');
+              }
+            });
+            if (soundActive) playConfirmSound();
+          }
+        });
+      });
+
+      // Theme Switcher Logic
+      const themeToggle = document.getElementById('theme-toggle');
+      themeToggle?.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('ff_theme', isDark ? 'dark' : 'light');
+        if (soundActive) playConfirmSound();
+      });
+
+      // ── Konami Code Easter Egg ────────────────────────────────────────────
+      // ↑ ↑ ↓ ↓ ← → ← → B A
+      const KONAMI = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+      let konamiIdx = 0;
+      const konamiMsg = document.getElementById('konami-msg');
+      document.addEventListener('keydown', (e) => {
+        if (e.key === KONAMI[konamiIdx]) {
+          konamiIdx++;
+          if (konamiIdx === KONAMI.length) {
+            konamiIdx = 0;
+            if (konamiMsg) {
+              konamiMsg.style.opacity = '1';
+              konamiMsg.style.transform = 'translateX(-50%) translateY(-8px)';
+              konamiMsg.style.pointerEvents = 'auto'; // allow clicking the link
+              if (soundActive) playConfirmSound();
+              setTimeout(() => {
+                konamiMsg.style.opacity = '0';
+                konamiMsg.style.transform = 'translateX(-50%) translateY(0)';
+                konamiMsg.style.pointerEvents = 'none';
+              }, 8000); // 8 seconds to click
+            }
+          }
+        } else {
+          konamiIdx = e.key === KONAMI[0] ? 1 : 0;
+        }
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  /* Official Highwind Final Fantasy Font Embed */
+  @font-face {
+    font-family: 'Highwind';
+    src: url('/fonts/Highwind.otf') format('opentype'),
+         url('/fonts/Highwind.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Highwind';
+    src: url('/fonts/Highwind-Italic.otf') format('opentype'),
+         url('/fonts/Highwind-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  /* Custom Scrollbar styled for JRPG feel */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    background: #334155;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+
+  /* Classic JRPG Window Borders (Clean double border with inner glow) */
+  .ff-box {
+    position: relative;
+    border: 2px solid #cbd5e1;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    transition: all 0.25s ease;
+  }
+
+  .dark .ff-box {
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(11, 17, 32, 0.98) 100%);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(56, 189, 248, 0.15);
+  }
+
+  .ff-box:hover {
+    border-color: #0ea5e9;
+    box-shadow: 0 10px 25px -4px rgba(14, 165, 233, 0.15), inset 0 0 0 1px rgba(14, 165, 233, 0.2);
+  }
+
+  .dark .ff-box:hover {
+    border-color: rgba(56, 189, 248, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(56, 189, 248, 0.15);
+  }
+
+  /* Animated Final Fantasy Cursor Hand */
+  .ff-hand {
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.25));
+  }
+
+  /* Smooth title underline like classic FF titles */
+  .ff-title-bar {
+    position: relative;
+  }
+  .ff-title-bar::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, #a855f7 0%, #ec4899 50%, transparent 100%);
+  }
+  .dark .ff-title-bar::after {
+    background: linear-gradient(90deg, #c084fc 0%, #f472b6 50%, transparent 100%);
+  }
+
+  /* Custom Pixel Art Sword Cursor */
+  .ff-cursor,
+  .ff-cursor *,
+  .dark.ff-cursor,
+  .dark .ff-cursor,
+  .dark.ff-cursor *,
+  .dark .ff-cursor * {
+    cursor: url('/ff-sword.png') 0 0, auto;
+  }
+
+  /* Interactive elements restore pointer affordance, but we can keep the sword with a slight shift or just rely on CSS */
+  .ff-cursor a,
+  .ff-cursor button,
+  .ff-cursor [role="button"],
+  .ff-cursor .ff-menu-item,
+  .ff-cursor label {
+    cursor: url('/ff-sword.png') 0 0, pointer;
+  }
+</style>

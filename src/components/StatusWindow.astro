@@ -1,0 +1,179 @@
+---
+import { portfolioContent } from '../data/portfolioData';
+const pt = portfolioContent.pt;
+const en = portfolioContent.en;
+---
+
+<section id="status-screen" class="py-16 sm:py-24 px-4 max-w-6xl mx-auto">
+  
+  <!-- Section Title Bar with FF double rule -->
+  <div class="mb-10 sm:mb-12 flex flex-col items-center sm:items-start space-y-2">
+    <div class="text-xs font-mono tracking-widest text-amano-cyan dark:text-crystal-blue uppercase">
+      [ 01 // PROFILE & BACKGROUND ]
+    </div>
+    <h2 class="font-ff text-2xl sm:text-4xl tracking-widest font-bold uppercase text-slate-900 dark:text-white ff-title-bar inline-block">
+      <span data-pt="PERFIL TÉCNICO & FORMAÇÃO" data-en="TECHNICAL PROFILE & EDUCATION">PERFIL TÉCNICO & FORMAÇÃO</span>
+    </h2>
+    <p class="text-sm font-mono text-slate-500 dark:text-slate-400 pt-1 text-center sm:text-left"
+       data-pt="Visão geral de competências de engenharia, arquitetura de backend e trajetória acadêmica."
+       data-en="Overview of engineering competencies, backend architecture, and academic background.">
+      Visão geral de competências de engenharia, arquitetura de backend e trajetória acadêmica.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+    
+    <!-- Left Column: Technical Overview & Stats (7 cols) -->
+    <div class="lg:col-span-7 ff-box p-6 sm:p-8 space-y-6">
+      
+      <!-- Top Character Header -->
+      <div class="border-b border-slate-200 dark:border-crystal-800 pb-5 space-y-3">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+          <div>
+            <span class="text-xs font-mono text-amano-cyan dark:text-crystal-blue uppercase tracking-widest font-semibold">
+              FULLSTACK ENGINEER // BACKEND SPECIALIST
+            </span>
+            <h3 class="font-ff text-xl sm:text-2xl font-bold tracking-wide text-slate-900 dark:text-white">
+              {pt.personal.name}
+            </h3>
+          </div>
+        </div>
+
+        <p class="text-xs sm:text-sm font-mono text-slate-600 dark:text-slate-300"
+           data-pt={pt.character.focus}
+           data-en={en.character.focus}>
+          {pt.character.focus}
+        </p>
+
+        <!-- Real Engineering Metric Chips -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 font-mono text-xs">
+          {pt.character.metrics.map((metric, mIdx) => (
+            <div class="p-2 rounded bg-slate-100/80 dark:bg-crystal-900/60 border border-slate-200 dark:border-crystal-800 text-center">
+              <div class="font-bold text-slate-900 dark:text-white text-sm text-amano-cyan dark:text-crystal-blue">
+                {metric.value}
+              </div>
+              <div class="text-[10px] text-slate-500 dark:text-slate-400 leading-tight mt-0.5"
+                   data-pt={metric.label}
+                   data-en={en.character.metrics[mIdx].label}>
+                {metric.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Attributes / Skill Bars -->
+      <div class="space-y-4">
+        <h4 class="font-ff text-xs tracking-widest font-bold uppercase text-slate-500 dark:text-slate-400">
+          <span data-pt="DOMÍNIO TÉCNICO POR ÁREA" data-en="TECHNICAL COMPETENCY BY AREA">DOMÍNIO TÉCNICO POR ÁREA</span>
+        </h4>
+
+        <div class="flex flex-col gap-2 font-mono text-xs">
+          {pt.character.stats.map((stat, i) => (
+            <div class="flex items-center gap-2.5 px-3 py-2 rounded bg-slate-50 dark:bg-crystal-900/40 border border-slate-100 dark:border-crystal-800/60">
+              <span class="text-amano-cyan dark:text-crystal-blue text-[10px]">◈</span>
+              <span class="text-slate-700 dark:text-slate-300 font-bold uppercase tracking-wide" data-pt={stat.name} data-en={en.character.stats[i].name}>
+                {stat.name}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Architectural & Technical Pillars -->
+      <div class="pt-4 border-t border-slate-200 dark:border-crystal-800">
+        <h4 class="font-ff text-xs tracking-widest font-bold uppercase text-slate-500 dark:text-slate-400 mb-3">
+          <span data-pt="DIFERENCIAIS TÉCNICOS & ARQUITETURA" data-en="TECHNICAL & ARCHITECTURAL PILLARS">
+            DIFERENCIAIS TÉCNICOS & ARQUITETURA
+          </span>
+        </h4>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {pt.character.passives.map((passive, idx) => (
+            <div class="p-3 rounded bg-slate-50 dark:bg-crystal-900/60 border border-slate-200 dark:border-crystal-800/80">
+              <div class="flex items-center gap-1.5 text-slate-900 dark:text-white font-mono text-xs font-bold mb-1">
+                <span class="text-amano-cyan dark:text-crystal-blue">✦</span>
+                <span data-pt={passive.name} data-en={en.character.passives[idx].name}>{passive.name}</span>
+              </div>
+              <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed font-sans"
+                 data-pt={passive.effect}
+                 data-en={en.character.passives[idx].effect}>
+                {passive.effect}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Column: Academic Trajectory & Partnerships (5 cols) -->
+    <div class="lg:col-span-5 ff-box p-6 sm:p-8 flex flex-col justify-between space-y-6">
+      <div>
+        <div class="flex items-center gap-2 mb-4 border-b border-slate-200 dark:border-crystal-800 pb-3">
+          <span class="text-amber-500 text-lg">🏛️</span>
+          <h3 class="font-ff text-lg font-bold tracking-wider text-slate-900 dark:text-white uppercase">
+            <span data-pt="FORMAÇÃO ACADÊMICA & PARCERIAS" data-en="ACADEMIC BACKGROUND & PARTNERSHIPS">
+              FORMAÇÃO ACADÊMICA & PARCERIAS
+            </span>
+          </h3>
+        </div>
+
+        <div class="space-y-5">
+          {pt.education.map((edu, idx) => (
+            <div class="relative pl-5 border-l-2 border-amano-cyan/50 dark:border-crystal-blue/40 group">
+              <span class="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full bg-amano-cyan dark:bg-crystal-blue group-hover:scale-125 transition-transform"></span>
+              
+              <div class="text-[11px] font-mono text-amano-cyan dark:text-crystal-blue font-semibold">
+                {edu.period} • <span class="uppercase tracking-wider">{edu.status}</span>
+              </div>
+
+              <h4 class="font-bold text-sm text-slate-900 dark:text-white mt-0.5"
+                  data-pt={edu.degree}
+                  data-en={en.education[idx].degree}>
+                {edu.degree}
+              </h4>
+
+              <div class="text-xs text-slate-600 dark:text-slate-400 font-medium">
+                {edu.institution}
+              </div>
+
+              {edu.notes && (
+                <p class="text-xs text-slate-500 dark:text-slate-400 italic mt-1"
+                   data-pt={edu.notes}
+                   data-en={en.education[idx].notes}>
+                  {edu.notes}
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Quick Action / Download CV Badge -->
+      <div class="pt-4 border-t border-slate-200 dark:border-crystal-800">
+        <div class="p-3.5 rounded bg-sky-50 dark:bg-crystal-900/80 border border-sky-200 dark:border-crystal-800 flex items-center justify-between gap-3">
+          <div class="text-xs font-mono">
+            <div class="font-bold text-slate-900 dark:text-white" data-pt="Curriculum Vitae Homologado" data-en="Official Technical Resume">
+              Curriculum Vitae Homologado
+            </div>
+            <div class="text-slate-500 text-[11px]" data-pt="Versão completa e atualizada em PDF" data-en="Full updated PDF version">
+              Versão completa e atualizada em PDF
+            </div>
+          </div>
+          <a 
+            href="#equipment" 
+            class="px-3 py-1.5 text-xs font-ff tracking-wider font-bold rounded bg-slate-900 dark:bg-white text-white dark:text-slate-950 hover:bg-amano-cyan dark:hover:bg-crystal-blue transition-colors cursor-pointer"
+            data-pt="VER CV"
+            data-en="VIEW CV"
+          >
+            VER CV
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

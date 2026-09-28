@@ -1,0 +1,19 @@
+# 1. Dependências do projeto
+node_modules/
+
+# 2. Artefatos de compilação e cache
+dist/
+.astro/
+
+# 3. Variáveis de ambiente e segredos
+.env
+.env.*
+!.env.example
+
+# 4. Arquivos temporários e de Sistema Operacional
+.DS_Store
+Thumbs.db
+*.log
+
+# 5. Arquivo temporário de inspeção local
+repos.json

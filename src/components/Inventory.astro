@@ -1,0 +1,68 @@
+---
+import { portfolioContent } from '../data/portfolioData';
+const pt = portfolioContent.pt;
+const en = portfolioContent.en;
+---
+
+<section id="inventory" class="py-16 sm:py-24 px-4 max-w-6xl mx-auto">
+  
+  <!-- Section Title Bar -->
+  <div class="mb-10 sm:mb-12 flex flex-col items-center sm:items-start space-y-2">
+    <div class="text-xs font-mono tracking-widest text-amano-cyan dark:text-crystal-blue uppercase">
+      [ 03 // STACK & COMPETENCIES ]
+    </div>
+    <h2 class="font-ff text-2xl sm:text-4xl tracking-widest font-bold uppercase text-slate-900 dark:text-white ff-title-bar inline-block">
+      <span data-pt="STACK TECNOLÓGICA & FERRAMENTAS" data-en="TECH STACK & COMPETENCIES">
+        STACK TECNOLÓGICA & FERRAMENTAS
+      </span>
+    </h2>
+    <p class="text-sm font-mono text-slate-500 dark:text-slate-400 pt-1 max-w-2xl text-center sm:text-left"
+       data-pt="Linguagens, frameworks, ferramentas de dados e protocolos dominados para construção de software de alto impacto."
+       data-en="Languages, enterprise frameworks, data tools, and infrastructure mastered to build robust, scalable software.">
+      Linguagens, frameworks, ferramentas de dados e protocolos dominados para construção de software de alto impacto.
+    </p>
+  </div>
+
+  <!-- Tech Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {pt.arsenal.map((cat, cIdx) => (
+      <div class="ff-box p-6 space-y-4">
+        
+        <!-- Category Header -->
+        <div class="flex items-center justify-between border-b border-slate-200 dark:border-crystal-800 pb-3">
+          <div class="flex items-center gap-2">
+            <span class="text-amber-500 font-bold">✦</span>
+            <h3 class="font-ff text-base sm:text-lg font-bold tracking-wide text-slate-900 dark:text-white uppercase"
+                data-pt={cat.category}
+                data-en={en.arsenal[cIdx].category}>
+              {cat.category}
+            </h3>
+          </div>
+          <span class="text-[11px] font-mono text-slate-400">ÁREA 0{cIdx + 1}</span>
+        </div>
+
+        <!-- Skills List in Category -->
+        <div class="space-y-3">
+          {cat.skills.map((skill, sIdx) => (
+            <div class="p-3 rounded bg-slate-50/80 dark:bg-crystal-900/50 border border-slate-200 dark:border-crystal-800/80 hover:border-amano-cyan dark:hover:border-crystal-blue transition-colors">
+              <div class="mb-1">
+                <span class="font-mono text-xs font-bold text-slate-900 dark:text-white"
+                      data-pt={skill.name}
+                      data-en={en.arsenal[cIdx].skills[sIdx].name}>
+                  {skill.name}
+                </span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400 font-sans"
+                 data-pt={skill.description}
+                 data-en={en.arsenal[cIdx].skills[sIdx].description}>
+                {skill.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    ))}
+  </div>
+
+</section>
