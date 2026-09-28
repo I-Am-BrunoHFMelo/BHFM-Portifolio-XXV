@@ -81,15 +81,6 @@ npm run preview
 
 ---
 
-## ⚖️ Propriedade Intelectual & Isenção de Responsabilidade (Fair Use)
-
-* Este é um portfólio pessoal estritamente não-comercial, concebido como uma homenagem aos clássicos JRPGs da era de ouro.
-* A marca **"Final Fantasy"**, bem como os designs conceituais, sprites e elementos visuais de interface, são marcas e propriedades intelectuais registradas da **Square Enix Co., Ltd.**
-* A tipografia Highwind é de autoria de Grand Chaos Productions (Jayvee Enaguas).
-* A licença de código aberto aplica-se única e exclusivamente à arquitetura, componentes, lógica TypeScript e estilização desenvolvidos pelo autor.
-
----
-
 ## 📬 Contato & Conexões
 
 * **Bruno Henrique Freitas de Melo** — *Engenheiro de Software Backend & Fullstack*
