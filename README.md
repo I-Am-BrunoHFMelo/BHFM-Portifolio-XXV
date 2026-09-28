@@ -1,4 +1,5 @@
-# ⚔️ Portfólio de Engenharia de Software — Bruno Henrique
+# ⚔️ Portfólio de Engenharia de Software
+# *Bruno Henrique Freitas de Melo*
 
 > Portfólio técnico pessoal com arquitetura Jamstack em Astro 5, TypeScript e Tailwind CSS
 
