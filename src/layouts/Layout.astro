@@ -107,30 +107,66 @@ const {
       });
 
       // Language Switcher Logic
+      function applyLanguage(targetLang) {
+        localStorage.setItem('ff_lang', targetLang);
+        document.documentElement.setAttribute('data-lang', targetLang);
+        
+        // Update text content
+        document.querySelectorAll('[data-pt]').forEach((el) => {
+          const ptText = el.getAttribute('data-pt');
+          const enText = el.getAttribute('data-en');
+          if (targetLang === 'en' && enText) {
+            el.innerHTML = enText;
+          } else if (targetLang === 'pt' && ptText) {
+            el.innerHTML = ptText;
+          }
+        });
+
+        // Update dynamic links (like CV download)
+        document.querySelectorAll('[data-href-pt]').forEach((el) => {
+          const hrefPt = el.getAttribute('data-href-pt');
+          const hrefEn = el.getAttribute('data-href-en');
+          if (targetLang === 'en' && hrefEn) {
+            el.setAttribute('href', hrefEn);
+          } else if (targetLang === 'pt' && hrefPt) {
+            el.setAttribute('href', hrefPt);
+          }
+        });
+
+        // Update dynamic download filenames
+        document.querySelectorAll('[data-download-pt]').forEach((el) => {
+          const downPt = el.getAttribute('data-download-pt');
+          const downEn = el.getAttribute('data-download-en');
+          if (targetLang === 'en' && downEn) {
+            el.setAttribute('download', downEn);
+          } else if (targetLang === 'pt' && downPt) {
+            el.setAttribute('download', downPt);
+          }
+        });
+
+        // Update active state on buttons
+        const toggles = document.querySelectorAll('.lang-toggle-btn');
+        toggles.forEach(b => {
+          if (b.getAttribute('data-lang') === targetLang) {
+            b.classList.add('bg-amano-200', 'dark:bg-crystal-800', 'font-bold');
+          } else {
+            b.classList.remove('bg-amano-200', 'dark:bg-crystal-800', 'font-bold');
+          }
+        });
+      }
+
+      // Initial check on load if saved language is en
+      const savedLang = localStorage.getItem('ff_lang') || 'pt';
+      if (savedLang === 'en') {
+        applyLanguage('en');
+      }
+
       const langToggles = document.querySelectorAll('.lang-toggle-btn');
       langToggles.forEach(btn => {
         btn.addEventListener('click', () => {
           const targetLang = btn.getAttribute('data-lang');
           if (targetLang) {
-            localStorage.setItem('ff_lang', targetLang);
-            document.documentElement.setAttribute('data-lang', targetLang);
-            document.querySelectorAll('[data-pt]').forEach((el) => {
-              const ptText = el.getAttribute('data-pt');
-              const enText = el.getAttribute('data-en');
-              if (targetLang === 'en' && enText) {
-                el.innerHTML = enText;
-              } else if (targetLang === 'pt' && ptText) {
-                el.innerHTML = ptText;
-              }
-            });
-            // Update active state on buttons
-            langToggles.forEach(b => {
-              if (b.getAttribute('data-lang') === targetLang) {
-                b.classList.add('bg-amano-200', 'dark:bg-crystal-800', 'font-bold');
-              } else {
-                b.classList.remove('bg-amano-200', 'dark:bg-crystal-800', 'font-bold');
-              }
-            });
+            applyLanguage(targetLang);
             if (soundActive) playConfirmSound();
           }
         });
