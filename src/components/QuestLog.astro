@@ -41,14 +41,20 @@ const en = portfolioContent.en;
         <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 border-b border-slate-200 dark:border-crystal-800/80 pb-5">
           <div class="space-y-1">
             <div class="flex flex-wrap items-center gap-2 text-xs font-mono">
-              <span class="px-2.5 py-0.5 rounded bg-sky-500/10 border border-sky-500/30 text-sky-700 dark:text-crystal-blue font-bold uppercase">
+              <span class="px-2.5 py-0.5 rounded bg-sky-500/10 border border-sky-500/30 text-sky-700 dark:text-crystal-blue font-bold uppercase"
+                    data-pt={`ESTUDO DE CASO 0${idx + 1}`}
+                    data-en={`CASE STUDY 0${idx + 1}`}>
                 ESTUDO DE CASO 0{idx + 1}
               </span>
-              <span class="text-slate-500 dark:text-slate-400 font-medium">
+              <span class="text-slate-500 dark:text-slate-400 font-medium"
+                    data-pt={quest.period}
+                    data-en={en.mainQuests[idx].period}>
                 {quest.period}
               </span>
               <span class="text-slate-300 dark:text-slate-600">•</span>
-              <span class="text-amano-cyan dark:text-crystal-blue font-semibold">
+              <span class="text-amano-cyan dark:text-crystal-blue font-semibold"
+                    data-pt={quest.organization}
+                    data-en={en.mainQuests[idx].organization}>
                 {quest.organization}
               </span>
             </div>
@@ -181,13 +187,19 @@ const en = portfolioContent.en;
           <div class="space-y-3 flex-grow">
             <!-- Metadata Row -->
             <div class="flex flex-wrap items-center gap-2 text-[11px] font-mono">
-              <span class="px-2 py-0.5 rounded bg-sky-500/10 border border-sky-500/30 text-sky-700 dark:text-crystal-blue font-bold uppercase">
+              <span class="px-2 py-0.5 rounded bg-sky-500/10 border border-sky-500/30 text-sky-700 dark:text-crystal-blue font-bold uppercase"
+                    data-pt={`PROJETO 0${idx + 1}`}
+                    data-en={`PROJECT 0${idx + 1}`}>
                 PROJETO 0{idx + 1}
               </span>
               <span class="text-slate-400">•</span>
-              <span class="text-slate-500 dark:text-slate-400">{quest.period}</span>
+              <span class="text-slate-500 dark:text-slate-400"
+                    data-pt={quest.period}
+                    data-en={en.sideQuests[idx].period}>{quest.period}</span>
               <span class="text-slate-400">•</span>
-              <span class="text-slate-600 dark:text-slate-300 font-semibold">{quest.organization}</span>
+              <span class="text-slate-600 dark:text-slate-300 font-semibold"
+                    data-pt={quest.organization}
+                    data-en={en.sideQuests[idx].organization}>{quest.organization}</span>
             </div>
 
             <!-- Title & Summary -->
@@ -229,8 +241,10 @@ const en = portfolioContent.en;
           <div class="lg:w-64 flex-shrink-0 flex flex-col justify-between gap-3 lg:border-l lg:border-slate-200 lg:dark:border-crystal-800 lg:pl-6 pt-3 lg:pt-0 border-t border-slate-200 dark:border-crystal-800 lg:border-t-0">
             <!-- Metrics Chips -->
             <div class="space-y-1.5">
-              {quest.metrics.slice(0, 2).map((m) => (
-                <div class="px-2.5 py-1 rounded bg-slate-50 dark:bg-crystal-900/60 border border-slate-200/80 dark:border-crystal-800/80 text-[11px] font-mono text-slate-700 dark:text-slate-300 text-center font-medium">
+              {quest.metrics.slice(0, 2).map((m, mIdx) => (
+                <div class="px-2.5 py-1 rounded bg-slate-50 dark:bg-crystal-900/60 border border-slate-200/80 dark:border-crystal-800/80 text-[11px] font-mono text-slate-700 dark:text-slate-300 text-center font-medium"
+                     data-pt={m}
+                     data-en={en.sideQuests[idx].metrics[mIdx]}>
                   {m}
                 </div>
               ))}

@@ -13,7 +13,7 @@
 
 ## 🌐 Demonstração ao Vivo
 O projeto foi desenvolvido para deploy contínuo na Vercel:
-👉 **[Acessar Portfólio Online]([https://brunohfmelo.vercel.app](https://bhfm-portifolio-xxv.vercel.app))**
+👉 **[Acessar Portfólio Online](https://bhfm-portifolio-xxv.vercel.app)**
 
 ---
 
@@ -37,6 +37,7 @@ O objetivo deste portfólio é unir **rigor técnico de engenharia de software**
 | **Operação Queimadas: Pipeline Concorrente** *(BrasNAM/SBC)* | Python, Concorrência, spaCy, LDA | Mineração resiliente de +136k posts do Bluesky com taxa zero de falhas. **Artigo publicado na SBC**. |
 | **RefAgent-Py: Refatoração com Multi-Agentes** *(PPGCC/UFAC)* | Python, Ollama, LLMs, RefactorBench | Orquestração de 4 agentes especializados (Planejador, Gerador, Compilador e Testador) em GPU local (RTX 5080) com +62% em testes. |
 | **API REST de Gestão Patrimonial** *(INSS)* | Python, Django REST Framework, ORM | Modelagem de 9 entidades relacionais, auditoria de manutenções e automação de exportação em CSV. |
+| **BDD Biblioteca: Testes Automatizados** *(IARTES/Motorola)* | Java, Cucumber, Gherkin, JUnit 5, TDD | Modelagem de regras de negócio, testes de aceitação BDD com Gherkin e TDD com JUnit 5. |
 | **Anima Ultima — Companion App** | TypeScript, Ionic 8, Angular 20, Dexie.js | Arquitetura offline-first com autosave em IndexedDB. **[Live Demo na Vercel](https://anima-ultima-aplica-o-mobile-para-f.vercel.app/home)**. |
 | **Deck & Dice — App Android Nativo** | Java (SDK 34), Canvas 2D, Room Database | Motor de avaliação de expressões de dados e renderização gráfica 2D customizada. |
 | **Mini-CRM Orientado a Eventos** | PHP, Laravel 10, Reverb WebSockets | Filas assíncronas desacopladas (Jobs), Observers e atualizações live via WebSockets. |
@@ -84,7 +85,7 @@ npm run preview
 
 ## 📬 Contato & Conexões
 
-* **Bruno Henrique Freitas de Melo** — *Engenheiro de Software Backend & Fullstack*
+* **Bruno Henrique Freitas de Melo** — *Engenheiro de Software P&D | Backend, Fullstack & IA Aplicada*
 * **E-mail:** [brunohf131@gmail.com](mailto:brunohf131@gmail.com)
 * **LinkedIn:** [linkedin.com/in/brunohfmelo](https://linkedin.com/in/brunohfmelo)
 * **GitHub:** [@I-Am-BrunoHFMelo](https://github.com/I-Am-BrunoHFMelo)

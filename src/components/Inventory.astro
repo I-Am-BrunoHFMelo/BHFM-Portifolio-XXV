@@ -45,12 +45,19 @@ const en = portfolioContent.en;
         <div class="space-y-3">
           {cat.skills.map((skill, sIdx) => (
             <div class="p-3 rounded bg-slate-50/80 dark:bg-crystal-900/50 border border-slate-200 dark:border-crystal-800/80 hover:border-amano-cyan dark:hover:border-crystal-blue transition-colors">
-              <div class="mb-1">
+              <div class="mb-1 flex items-center justify-between gap-2">
                 <span class="font-mono text-xs font-bold text-slate-900 dark:text-white"
                       data-pt={skill.name}
                       data-en={en.arsenal[cIdx].skills[sIdx].name}>
                   {skill.name}
                 </span>
+                {skill.level && (
+                  <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-200/70 dark:bg-crystal-800/70 text-slate-600 dark:text-slate-300 flex-shrink-0"
+                        data-pt={skill.level}
+                        data-en={en.arsenal[cIdx].skills[sIdx].level}>
+                    {skill.level}
+                  </span>
+                )}
               </div>
               <p class="text-xs text-slate-600 dark:text-slate-400 font-sans"
                  data-pt={skill.description}

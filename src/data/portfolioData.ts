@@ -67,17 +67,17 @@ export const portfolioContent: Record<'pt' | 'en', PortfolioData> = {
     personal: {
       name: "Bruno Henrique Freitas de Melo",
       romanizedTitle: "BRUNO H. F. MELO",
-      tagline: "Engenheiro de Software • Fullstack com foco em Backend • Mestrando em Ciência da Computação",
+      tagline: "Engenheiro de Software P&D | Backend, Fullstack & IA Aplicada",
       prologue: "Das coletas concorrentes de dados das queimadas amazônicas até arquiteturas backend corporativas com Spring Boot e Django. Onde regras de negócio complexas viram sistemas resilientes, testáveis e escaláveis.",
-      location: "Rio Branco, AC - Brasil (Disponível para Trabalho Remoto)",
+      location: "Rio Branco, AC - Brasil (Disponível 100% Remoto / Aberto a Realocação)",
       email: "brunohf131@gmail.com",
       phone: "+55 (68) 99930-9277",
       linkedin: "https://linkedin.com/in/brunohfmelo",
       github: "https://github.com/I-Am-BrunoHFMelo",
     },
     character: {
-      role: "Engenheiro de Software Fullstack",
-      focus: "Especialista em Backend, Concorrência e Regras de Negócio",
+      role: "Engenheiro de Software P&D",
+      focus: "Backend, Fullstack, Sistemas Distribuídos & IA Aplicada",
       metrics: [
         { label: "Publicações analisadas com NLP", value: "+136k" },
         { label: "Endpoints REST documentados", value: "30+" },
@@ -113,35 +113,42 @@ export const portfolioContent: Record<'pt' | 'en', PortfolioData> = {
     },
     education: [
       {
-        degree: "Mestrado em Ciência da Computação",
+        degree: "Mestrado em Ciência da Computação (PPGCC)",
         institution: "Universidade Federal do Acre (UFAC)",
         period: "2026 – 2028",
         status: "Em andamento",
-        notes: "Pesquisa aplicada em modelagem computacional avançada e análise de dados."
+        notes: "Linha de pesquisa em Inteligência Artificial & Sistemas de Software, com foco em modelagem computacional e agentes inteligentes."
       },
       {
-        degree: "Pós-Graduação Lato Sensu em Engenharia de Testes com IA",
-        institution: "Universidade Federal do Acre em parceria com Motorola",
+        degree: "Pós-Graduação Lato Sensu em Engenharia de Testes de Software com IA (IARTES)",
+        institution: "Universidade Federal do Acre em parceria com Motorola Mobility",
         period: "2026 – 2027",
-        status: "Em andamento",
-        notes: "Automação de testes de software assistida por inteligência artificial e confiabilidade."
-      },
-      {
-        degree: "Web Academy – Capacitação em Desenvolvimento Full-Stack",
-        institution: "Universidade Federal do Acre em parceria com Motorola",
-        period: "2025",
-        status: "Concluído",
-        notes: "Desenvolvimento corporativo intensivo com Spring Boot, Angular 19, Scrum e boas práticas."
+        status: "Em andamento (CR atual: 9,65)",
+        notes: "Especialização com foco em testes inteligentes, automação e confiabilidade de sistemas. Coeficiente de Rendimento (CR) atual: 9,65."
       },
       {
         degree: "Bacharelado em Sistemas de Informação",
         institution: "Universidade Federal do Acre (UFAC)",
         period: "2019 – 2025",
         status: "Concluído",
-        notes: "Formação sólida em algoritmos, bancos de dados relacionais e engenharia de software."
+        notes: "Formação sólida em algoritmos e engenharia de software. Trabalho de Conclusão de Curso (TCC) aprovado com Nota 10,0."
       },
       {
-        degree: "N.A.V.E. Tech Acre – Empreendedorismo e Tecnologias Avançadas",
+        degree: "Web Academy – Capacitação em Desenvolvimento Full-Stack (300h)",
+        institution: "Universidade Federal do Acre em parceria com Motorola Mobility",
+        period: "2025",
+        status: "Concluído",
+        notes: "Desenvolvimento corporativo intensivo com Spring Boot, Angular 19, Scrum e boas práticas."
+      },
+      {
+        degree: "Núcleo de Apoio à Inclusão (NAI / UFAC) — Tecnologia Assistiva & Acessibilidade",
+        institution: "Universidade Federal do Acre (UFAC)",
+        period: "2022 – 2025",
+        status: "Concluído (1.360h)",
+        notes: "Bolsista com 1.360 horas dedicadas a tecnologia assistiva, acessibilidade computacional, suporte pedagógico-técnico e manutenção do portal CMS Plone do PPGCC/UFAC."
+      },
+      {
+        degree: "N.A.V.E. Tech Acre – Empreendedorismo e Tecnologias Avançadas (230h)",
         institution: "Universidade Federal do Acre em parceria com Samsung",
         period: "2022",
         status: "Concluído",
@@ -169,6 +176,7 @@ export const portfolioContent: Record<'pt' | 'en', PortfolioData> = {
           "Artigo indexado e publicado no portal sol.sbc.org.br"
         ],
         stack: ["Python", "ThreadPoolExecutor", "Gensim (LDA)", "spaCy", "NLTK", "Bluesky AT Protocol", "Pandas"],
+        repoUrl: "https://github.com/I-Am-BrunoHFMelo/Leia-Bluesky-Queimadas-2024",
         paperUrl: "https://sol.sbc.org.br/index.php/brasnam/article/view/43247"
       },
       {
@@ -285,7 +293,7 @@ export const portfolioContent: Record<'pt' | 'en', PortfolioData> = {
         ],
         metrics: ["Deploy ativo na Vercel", "Arquitetura Offline-First (Dexie.js)", "Ionic 8 + Angular 20"],
         stack: ["TypeScript", "Angular 20", "Ionic 8", "Capacitor", "Dexie.js (IndexedDB)", "Vercel"],
-        repoUrl: "https://github.com/I-Am-BrunoHFMelo/Anima-Ultima-Aplica-o-Mobile-para-Fabula-Ultima-",
+        repoUrl: "https://github.com/I-Am-BrunoHFMelo/Anima-Ultima-Aplicacao-Mobile-para-Fabula-Ultima",
         liveUrl: "https://anima-ultima-aplica-o-mobile-para-f.vercel.app/home"
       },
       {
@@ -303,6 +311,23 @@ export const portfolioContent: Record<'pt' | 'en', PortfolioData> = {
         metrics: ["Motor de avaliação em Java puro", "Persistência com Android Room Database"],
         stack: ["Java", "Android SDK 34", "Canvas 2D", "Room Database", "Material Design"],
         repoUrl: "https://github.com/I-Am-BrunoHFMelo/Deck-Dice"
+      },
+      {
+        id: "bdd-biblioteca-cucumber",
+        title: "BDD Biblioteca: Testes Automatizados com Cucumber & JUnit 5",
+        type: "side",
+        organization: "Pós-Graduação IARTES (Motorola / UFAC)",
+        period: "2026",
+        role: "Desenvolvedor Java & Engenheiro de QA",
+        summary: "Modelagem de regras de negócio para empréstimos e multas em Java com testes unitários em JUnit 5 e testes de aceitação em BDD com Cucumber/Gherkin.",
+        description: [
+          "Implementou testes de aceitação orientados a comportamento (BDD) com Cucumber e especificações executáveis em Gherkin em português, estabelecendo documentação viva.",
+          "Desenvolveu regras de negócio para cálculo de empréstimos e multas sob abordagem guiada por testes (TDD) com JUnit 5.",
+          "Projeto desenvolvido no âmbito da especialização IARTES (Motorola/UFAC) com Coeficiente de Rendimento (CR) 9,65."
+        ],
+        metrics: ["Testes BDD em Gherkin", "TDD & JUnit 5", "Documentação viva da regra de negócio"],
+        stack: ["Java", "Cucumber", "Gherkin", "JUnit 5", "TDD", "Maven"],
+        repoUrl: "https://github.com/I-Am-BrunoHFMelo/bdd-biblioteca-cucumber"
       }
     ],
     arsenal: [
@@ -317,13 +342,24 @@ export const portfolioContent: Record<'pt' | 'en', PortfolioData> = {
         ]
       },
       {
+        category: "Qualidade & Testes de Software",
+        iconName: "check-circle",
+        skills: [
+          { name: "TDD & JUnit 5 / Mockito", level: "Avançado", description: "Test-Driven Development, testes unitários e de integração, mocks e asserções rigorosas" },
+          { name: "BDD com Cucumber & Gherkin", level: "Avançado", description: "Especificações executáveis em linguagem ubíqua (Gherkin), documentação viva e testes de aceitação" },
+          { name: "PyTest & Testes em Python", level: "Avançado", description: "Fixtures, testes parametrizados, cobertura de testes e validação funcional de código" },
+          { name: "Análise Estática & AST / mypy", level: "Avançado", description: "mypy, Pylint, inspeção sintática via AST nativo em Python e gates dinâmicos de compilação" },
+          { name: "Especialização IARTES (Motorola / UFAC)", level: "CR Atual: 9,65", description: "Pós-Graduação em Engenharia de Testes de Software com IA em parceria com a Motorola Mobility" }
+        ]
+      },
+      {
         category: "Dados, Concorrência & IA",
         iconName: "cpu",
         skills: [
           { name: "Processamento Concorrente", level: "Avançado", description: "ThreadPoolExecutor, Controle de Rate Limit, Exponential Retries" },
           { name: "Processamento de Linguagem Natural", level: "Avançado", description: "spaCy, NLTK, VADER/LeIA, Gensim (LDA Topic Modeling)" },
           { name: "Lógica Difusa (Fuzzy Logic)", level: "Avançado", description: "Sistemas Mamdani, Funções de Pertinência, Scikit-Fuzzy" },
-          { name: "Engenharia de Testes com IA", level: "Cursando (2026–2027)", description: "Pós-Graduação UFAC/Motorola em Testes Inteligentes" }
+          { name: "Sistemas Multi-Agente & LLMs", level: "Avançado", description: "Ollama, Modelos Open-Weight Locais, RefactorBench, Orquestração com 4 Agentes" }
         ]
       },
       {
@@ -362,17 +398,17 @@ export const portfolioContent: Record<'pt' | 'en', PortfolioData> = {
     personal: {
       name: "Bruno Henrique Freitas de Melo",
       romanizedTitle: "BRUNO H. F. MELO",
-      tagline: "Software Engineer • Fullstack with Backend Focus • Master's Candidate in Computer Science",
+      tagline: "R&D Software Engineer | Backend-Heavy Fullstack & Applied AI",
       prologue: "From concurrent data harvesting during Amazonian wildfire crises to enterprise distributed backend architectures with Spring Boot and Django. Where complex business logic turns into resilient, testable, and scalable systems.",
-      location: "Rio Branco, AC - Brazil (Available for Global Remote Roles)",
+      location: "Rio Branco, AC - Brazil (Available 100% Remote / Open to Relocation)",
       email: "brunohf131@gmail.com",
       phone: "+55 (68) 99930-9277",
       linkedin: "https://linkedin.com/in/brunohfmelo",
       github: "https://github.com/I-Am-BrunoHFMelo",
     },
     character: {
-      role: "Fullstack Software Engineer",
-      focus: "Specialist in Backend Architecture, Concurrency & Business Rules",
+      role: "R&D Software Engineer",
+      focus: "Backend-Heavy Fullstack, Distributed Systems & Applied AI",
       metrics: [
         { label: "Posts mined and analyzed with NLP", value: "+136k" },
         { label: "REST Endpoints documented", value: "30+" },
@@ -408,35 +444,42 @@ export const portfolioContent: Record<'pt' | 'en', PortfolioData> = {
     },
     education: [
       {
-        degree: "M.Sc. in Computer Science",
+        degree: "M.Sc. in Computer Science (PPGCC)",
         institution: "Federal University of Acre (UFAC)",
         period: "2026 – 2028",
         status: "In Progress",
-        notes: "Applied research in advanced computational modeling and data analysis."
+        notes: "Research track in Artificial Intelligence & Software Systems, focusing on computational modeling and intelligent agents."
       },
       {
-        degree: "Postgraduate Specialization in AI-Driven Software Testing",
-        institution: "Federal University of Acre in partnership with Motorola",
+        degree: "Postgraduate Specialization in AI-Driven Software Testing (IARTES)",
+        institution: "Federal University of Acre in partnership with Motorola Mobility",
         period: "2026 – 2027",
-        status: "In Progress",
-        notes: "AI-assisted test automation, quality assurance, and system reliability."
-      },
-      {
-        degree: "Web Academy – Full-Stack Web Development Program",
-        institution: "Federal University of Acre in partnership with Motorola",
-        period: "2025",
-        status: "Completed",
-        notes: "Intensive training with Spring Boot, Angular 19, Scrum, and enterprise best practices."
+        status: "In Progress (Current GPA/CR: 9.65)",
+        notes: "AI-assisted test automation, quality engineering, and system reliability. Current GPA (CR): 9.65."
       },
       {
         degree: "B.S. in Information Systems",
         institution: "Federal University of Acre (UFAC)",
         period: "2019 – 2025",
         status: "Completed",
-        notes: "Solid foundation in computer science, relational databases, and software engineering."
+        notes: "Solid foundation in computer science and software engineering. Bachelor's thesis (TCC) graded with maximum score (10.0 / 10.0)."
       },
       {
-        degree: "N.A.V.E. Tech Acre – Entrepreneurship and Advanced Technologies",
+        degree: "Web Academy – Full-Stack Web Development Program (300h)",
+        institution: "Federal University of Acre in partnership with Motorola Mobility",
+        period: "2025",
+        status: "Completed",
+        notes: "Intensive corporate engineering with Spring Boot, Angular 19, Scrum, and enterprise best practices."
+      },
+      {
+        degree: "Accessibility & Assistive Technology Fellowship (NAI / UFAC)",
+        institution: "Federal University of Acre (UFAC)",
+        period: "2022 – 2025",
+        status: "Completed (1,360h)",
+        notes: "Scholarship fellow completing 1,360 hours dedicated to assistive technology, digital accessibility, specialized student support, and Plone CMS maintenance for the PPGCC/UFAC portal."
+      },
+      {
+        degree: "N.A.V.E. Tech Acre – Entrepreneurship and Advanced Technologies (230h)",
         institution: "Federal University of Acre in partnership with Samsung",
         period: "2022",
         status: "Completed",
@@ -464,6 +507,7 @@ export const portfolioContent: Record<'pt' | 'en', PortfolioData> = {
           "Paper indexed and published on sol.sbc.org.br"
         ],
         stack: ["Python", "ThreadPoolExecutor", "Gensim (LDA)", "spaCy", "NLTK", "Bluesky AT Protocol", "Pandas"],
+        repoUrl: "https://github.com/I-Am-BrunoHFMelo/Leia-Bluesky-Queimadas-2024",
         paperUrl: "https://sol.sbc.org.br/index.php/brasnam/article/view/43247"
       },
       {
@@ -580,7 +624,7 @@ export const portfolioContent: Record<'pt' | 'en', PortfolioData> = {
         ],
         metrics: ["Live on Vercel", "Offline-First (Dexie.js IndexedDB)", "Ionic 8 + Angular 20"],
         stack: ["TypeScript", "Angular 20", "Ionic 8", "Capacitor", "Dexie.js (IndexedDB)", "Vercel"],
-        repoUrl: "https://github.com/I-Am-BrunoHFMelo/Anima-Ultima-Aplica-o-Mobile-para-Fabula-Ultima-",
+        repoUrl: "https://github.com/I-Am-BrunoHFMelo/Anima-Ultima-Aplicacao-Mobile-para-Fabula-Ultima",
         liveUrl: "https://anima-ultima-aplica-o-mobile-para-f.vercel.app/home"
       },
       {
@@ -598,6 +642,23 @@ export const portfolioContent: Record<'pt' | 'en', PortfolioData> = {
         metrics: ["Expression engine in pure Java", "Room Database persistence"],
         stack: ["Java", "Android SDK 34", "Canvas 2D", "Room Database", "Material Design"],
         repoUrl: "https://github.com/I-Am-BrunoHFMelo/Deck-Dice"
+      },
+      {
+        id: "bdd-biblioteca-cucumber",
+        title: "BDD Library: Automated Acceptance Testing with Cucumber & JUnit 5",
+        type: "side",
+        organization: "IARTES Postgrad (Motorola / UFAC Partnership)",
+        period: "2026",
+        role: "Java Developer & QA Engineer",
+        summary: "Business domain modeling for book loans and fines in Java, verified with JUnit 5 unit suites and behavior-driven acceptance tests via Cucumber & Gherkin.",
+        description: [
+          "Implemented behavior-driven development (BDD) acceptance tests using Cucumber and executable Gherkin specifications as living documentation.",
+          "Engineered loan calculation and fine penalty business logic under rigorous test-driven development (TDD) practices with JUnit 5.",
+          "Developed as part of the IARTES Postgraduate specialization (Motorola/UFAC) with current GPA / CR of 9.65."
+        ],
+        metrics: ["BDD Gherkin Acceptance Suites", "TDD & JUnit 5 Testing", "Living Documentation"],
+        stack: ["Java", "Cucumber", "Gherkin", "JUnit 5", "TDD", "Maven"],
+        repoUrl: "https://github.com/I-Am-BrunoHFMelo/bdd-biblioteca-cucumber"
       }
     ],
     arsenal: [
@@ -612,13 +673,24 @@ export const portfolioContent: Record<'pt' | 'en', PortfolioData> = {
         ]
       },
       {
+        category: "Software Quality & Testing",
+        iconName: "check-circle",
+        skills: [
+          { name: "TDD & JUnit 5 / Mockito", level: "Advanced", description: "Test-Driven Development, unit and integration suites, mocking, and rigorous assertions" },
+          { name: "BDD with Cucumber & Gherkin", level: "Advanced", description: "Executable specifications in ubiquitous language (Gherkin), living documentation, and acceptance tests" },
+          { name: "PyTest & Python Testing", level: "Advanced", description: "Fixtures, parameterized tests, test coverage, and functional verification of code" },
+          { name: "Static Analysis & AST / mypy", level: "Advanced", description: "mypy, Pylint, native Python AST syntax inspection, and dynamic compilation gates" },
+          { name: "IARTES Specialization (Motorola / UFAC)", level: "Current GPA: 9.65", description: "Postgraduate degree in AI-Driven Software Test Engineering in partnership with Motorola Mobility" }
+        ]
+      },
+      {
         category: "Data Engineering, Concurrency & AI",
         iconName: "cpu",
         skills: [
           { name: "Concurrent Processing", level: "Advanced", description: "ThreadPoolExecutor, Rate Limit Throttling, Exponential Retries" },
           { name: "Natural Language Processing", level: "Advanced", description: "spaCy, NLTK, VADER/LeIA, Gensim (LDA Topic Modeling)" },
           { name: "Fuzzy Logic Systems", level: "Advanced", description: "Mamdani Inference, Membership Functions, Scikit-Fuzzy" },
-          { name: "AI Test Engineering", level: "In Progress (2026–2027)", description: "UFAC/Motorola Postgrad in Intelligent Software Testing" }
+          { name: "Multi-Agent Systems & LLMs", level: "Advanced", description: "Ollama, Local Open-Weight Models, RefactorBench, 4-Agent Orchestration" }
         ]
       },
       {

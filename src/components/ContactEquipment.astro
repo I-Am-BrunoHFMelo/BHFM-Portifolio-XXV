@@ -33,10 +33,10 @@ const en = portfolioContent.en;
       <!-- Left: Direct Action / Download CV & Bio -->
       <div class="space-y-6">
         <div class="space-y-2">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-semibold">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-            <span data-pt="DISPONÍVEL PARA CONTRATAÇÃO (REMOTO CLT / PJ)" data-en="AVAILABLE FOR IMMEDIATE HIRE (REMOTE FULL-TIME / CONTRACT)">
-              DISPONÍVEL PARA CONTRATAÇÃO (REMOTO CLT / PJ)
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-sky-500/10 border border-sky-500/30 text-sky-600 dark:text-crystal-blue text-xs font-mono font-semibold">
+            <span class="w-2 h-2 rounded-full bg-sky-500 animate-ping"></span>
+            <span data-pt="PESQUISA & DESENVOLVIMENTO DE SOFTWARE (P&D)" data-en="SOFTWARE RESEARCH & DEVELOPMENT (R&D)">
+              PESQUISA & DESENVOLVIMENTO DE SOFTWARE (P&D)
             </span>
           </div>
 
@@ -47,9 +47,9 @@ const en = portfolioContent.en;
           </h3>
 
           <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-sans"
-             data-pt="Buscando uma oportunidade para agregar solidez técnica em backend (Spring Boot, Django, RBAC), processamento concorrente e desenvolvimento fullstack com Angular."
-             data-en="Looking for opportunities to deliver backend stability (Spring Boot, Django, RBAC), concurrent data processing, and fullstack capabilities with Angular.">
-            Buscando uma oportunidade para agregar solidez técnica em backend (Spring Boot, Django, RBAC), processamento concorrente e desenvolvimento fullstack com Angular.
+             data-pt="Aberto a colaborações técnicas, pesquisa aplicada e oportunidades em engenharia de software — focado em arquiteturas de backend robustas, interfaces modernas, sistemas inteligentes e projetos flexíveis."
+             data-en="Open to technical collaborations, applied research, and software engineering opportunities — focused on robust backend architectures, modern interfaces, intelligent systems, and flexible projects.">
+            Aberto a colaborações técnicas, pesquisa aplicada e oportunidades em engenharia de software — focado em arquiteturas de backend robustas, interfaces modernas, sistemas inteligentes e projetos flexíveis.
           </p>
         </div>
 
@@ -84,7 +84,7 @@ const en = portfolioContent.en;
         <!-- Copy Email Card -->
         <div class="p-4 rounded-lg bg-slate-50 dark:bg-crystal-900/60 border border-slate-200 dark:border-crystal-800/80 flex items-center justify-between gap-3">
           <div class="space-y-0.5 overflow-hidden">
-            <span class="text-[10px] font-mono uppercase text-slate-400">E-mail de Contato</span>
+            <span class="text-[10px] font-mono uppercase text-slate-400" data-pt="E-mail de Contato" data-en="Contact Email">E-mail de Contato</span>
             <div class="font-mono text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 truncate">
               {pt.personal.email}
             </div>
@@ -167,9 +167,11 @@ const en = portfolioContent.en;
     const email = copyBtn.getAttribute('data-email');
     if (email && copyText) {
       navigator.clipboard.writeText(email).then(() => {
-        copyText.textContent = 'Copiado! ✓';
+        const isEn = document.documentElement.getAttribute('data-lang') === 'en';
+        copyText.textContent = isEn ? 'Copied! ✓' : 'Copiado! ✓';
         setTimeout(() => {
-          copyText.textContent = 'Copiar';
+          const currentLang = document.documentElement.getAttribute('data-lang');
+          copyText.textContent = currentLang === 'en' ? 'Copy' : 'Copiar';
         }, 2500);
       });
     }
